@@ -12,7 +12,10 @@ namespace Problems._001._Two_Sum
                 {
                     if (num + i == target)
                     {
-                        return new int[] { Array.IndexOf(nums, num), Array.IndexOf(nums, i) };
+                        if (Array.IndexOf(nums, num) != Array.IndexOf(nums, i))
+                        {
+                            return new int[] { Array.IndexOf(nums, num), Array.IndexOf(nums, i) };
+                        }
                     }
                 }
             }
