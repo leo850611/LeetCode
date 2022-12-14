@@ -6,20 +6,26 @@ namespace Problems._001._Two_Sum
     {
         public int[] TwoSum(int[] nums, int target)
         {
+            var currentIndex = 0;
             foreach (var num in nums)
             {
                 foreach (var i in nums)
                 {
                     if (num + i == target)
                     {
-                        if (Array.IndexOf(nums, num) != Array.IndexOf(nums, i))
+                        var firstOfIndex = Array.IndexOf(nums, num);
+                        var secondOfIndex = Array.IndexOf(nums, i, currentIndex + 1);
+                        if (firstOfIndex >= 0 && secondOfIndex >= 0 && firstOfIndex != secondOfIndex)
                         {
-                            return new int[] { Array.IndexOf(nums, num), Array.IndexOf(nums, i) };
+                            return new[] { firstOfIndex, secondOfIndex }; 
                         }
                     }
                 }
+
+                currentIndex++;
             }
-            return new int[]{};
+
+            return new int[] { };
         }
     }
 }
