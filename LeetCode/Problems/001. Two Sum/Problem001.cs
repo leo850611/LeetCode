@@ -1,10 +1,38 @@
 using System;
+using System.Collections.Generic;
 
 namespace Problems._001._Two_Sum
 {
     public class Problem001
     {
         public int[] TwoSum(int[] nums, int target)
+        {
+            var hashSet = new HashSet<int>();
+            foreach (var num in nums)
+            {
+                if (!hashSet.TryGetValue(num, out var value))
+                {
+                    hashSet.Add(num);
+                }
+            }
+
+            for (int currentIndex = 0; currentIndex < nums.Length; currentIndex++)
+            {
+                var searchNum = target - nums[currentIndex];
+                if (hashSet.TryGetValue(searchNum, out var searchResult))
+                {
+                    var indexOfSearchResult = Array.IndexOf(nums, searchResult, currentIndex + 1);
+                    if (indexOfSearchResult >=0 && currentIndex != indexOfSearchResult)
+                    {
+                        return new int[] { currentIndex, indexOfSearchResult };
+                    }
+                }
+            }
+            
+            return new int[] { };
+        }
+        
+        public int[] TwoSum_for(int[] nums, int target)
         {
             var currentIndex = 0;
             foreach (var num in nums)
