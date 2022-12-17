@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Problems._001._Two_Sum
@@ -6,6 +7,30 @@ namespace Problems._001._Two_Sum
     public class Problem001
     {
         public int[] TwoSum(int[] nums, int target)
+        {
+            var hashtable = new Hashtable();
+            
+            for (int currentIndex = 0; currentIndex < nums.Length; currentIndex++)
+            {
+                var currentNum = nums[currentIndex];
+                var searchNum = target - currentNum;
+                if (hashtable.Contains(searchNum))
+                {
+                    if (currentIndex != (int) hashtable[searchNum])
+                    {
+                        return new int[] { (int) hashtable[searchNum], currentIndex };
+                    }
+                }
+                else
+                {
+                    hashtable[currentNum] = currentIndex;
+                }
+            }
+            
+            return new int[] { };
+        }
+
+        public int[] TwoSum_hashSet(int[] nums, int target)
         {
             var hashSet = new HashSet<int>();
             foreach (var num in nums)
