@@ -4,39 +4,40 @@ namespace Problems._021._Merge_Two_Sorted_Lists
     {
         public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         {
-            var list1LastNode = list1;
-            var list2LastNode = list2;
-            while (list1LastNode != null)
+            var listNode = new ListNode();
+            var listNodeTemp = listNode;
+            while (list1 != null || list2 !=null)
             {
-                if (list2LastNode != null && list1LastNode.val <= list2LastNode.val)
+                if (list1 == null)
                 {
-                    var temp1 = list1LastNode.next;
-                    var temp2 = list2LastNode.next;
-
-                    list2LastNode.next = list1LastNode.next;
-                    list1LastNode.next = list2LastNode;
-
-
-                    if (temp1 == null)
+                    listNodeTemp.next = list2;
+                    list2 = list2.next; 
+                    
+                }
+                else if (list2 == null)
+                {
+                    listNodeTemp.next = list1;
+                    list1 = list1.next;
+                }
+                else
+                {
+                    if (list1.val <= list2.val)
                     {
-                        list1LastNode.next = list2LastNode;
-                        list2LastNode = null;
+                        listNodeTemp.next = list1;
+                        list1 = list1.next;
                     }
                     else
                     {
-                        list1LastNode = temp1;
-                        list2LastNode = temp2;
+                        listNodeTemp.next = list2;
+                        list2 = list2.next;
                     }
                 }
-                else if (list2LastNode == null)
-                {
-                    list1LastNode = list1LastNode.next;
-                }
+                
+                
+                listNodeTemp = listNodeTemp.next;
             }
 
-
-            
-            return list1;
+            return listNode.next;
         }
     }
 
