@@ -42,6 +42,7 @@
         <Compile Include="001. Two Sum\Problem001.cs" />
         <Compile Include="020. Valid Parentheses\Problem020.cs" />
         <Compile Include="021. Merge Two Sorted Lists\Problem021.cs" />
+        <Compile Include="121. Best Time to Buy and Sell Stock\Problem121.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
