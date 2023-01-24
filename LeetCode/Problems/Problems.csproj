@@ -44,6 +44,7 @@
         <Compile Include="021. Merge Two Sorted Lists\Problem021.cs" />
         <Compile Include="100. Same Tree\Problem100.cs" />
         <Compile Include="121. Best Time to Buy and Sell Stock\Problem121.cs" />
+        <Compile Include="206. Reverse Linked List\Problem206.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
