@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 namespace Problems._020._Valid_Parentheses
 {
+    // https://leetcode.com/problems/valid-parentheses/
     public class Problem020
     {
         private readonly Dictionary<char, char> _parenthesesLookUp = new Dictionary<char, char>()
