@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Problems.Models;
 
 namespace Problems._100._Same_Tree
 {
@@ -32,18 +33,4 @@ namespace Problems._100._Same_Tree
             GetTreeData(treeNode.right, queue);
         }
     }
-    
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    } 
 }
