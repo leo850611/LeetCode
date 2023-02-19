@@ -46,6 +46,7 @@
         <Compile Include="121. Best Time to Buy and Sell Stock\Problem121.cs" />
         <Compile Include="206. Reverse Linked List\Problem206.cs" />
         <Compile Include="226. Invert Binary Tree\Problem226.cs" />
+        <Compile Include="242. Valid Anagram\Problem242.cs" />
         <Compile Include="Models\ListNode.cs" />
         <Compile Include="Models\TreeNode.cs" />
         <Compile Include="Program.cs" />
